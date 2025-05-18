@@ -12,6 +12,9 @@ body{
     justify-content: space-around;
     border-bottom: solid black 1px;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 .navbar__01__title{
     color: #632bc6;
@@ -29,6 +32,7 @@ body{
     border:none;
     width: 100%;
     font-size: 16px;
+    background-color: transparent;
 }
 .navbar__02 input:focus{
     outline: none;
@@ -50,8 +54,23 @@ body{
     padding: 10px;
     border-radius: 30px;
 }
+.sale-image{
+    position: relative;
+}
+
 .sale-image img{
-    width: 100%;
+    width: 100%;    
+}
+
+.sale-image__offer{
+    width:35%;
+    border: solid black 2px;
+    background-color: white;
+    padding: 2%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    
 }
 .recommended{
     padding: 10px;
