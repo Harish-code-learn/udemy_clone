@@ -9,12 +9,13 @@ body{
 .navbar{
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     border-bottom: solid black 1px;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 1;
 }
 .navbar__01__title{
     color: #632bc6;
@@ -42,6 +43,10 @@ body{
     gap:10px;
     align-items: center;
 }
+
+.navbar__04{
+    display: none;
+}
 .categories{
     display: flex;
     padding: 10px;
@@ -53,6 +58,15 @@ body{
     color: white;
     padding: 10px;
     border-radius: 30px;
+    cursor: pointer;
+    border:solid #632bc6 1px;
+}
+
+.categories p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color: black;
+    border:solid #632bc6 1px;
 }
 .sale-image{
     position: relative;
@@ -70,8 +84,12 @@ body{
     position: absolute;
     top: 10%;
     left: 10%;
-    
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
+
 .recommended{
     padding: 10px;
 }
@@ -84,6 +102,9 @@ body{
 }
 .course-card{
     width: 200px;
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px
 }
 
 .course-card img{
@@ -133,4 +154,39 @@ body{
     justify-content: space-between;
     margin: 20px;
     align-items:end;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:800px){
+    body{
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:600px){
+    .course-card{
+        flex-basis: 40%;
+    }
+    .categories{
+        display: none;
+    }
+
+    .navbar__02,.navbar__03{
+        display: none;
+    }
+
+    .navbar__04{
+        display: block;
+    }
 }
